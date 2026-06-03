@@ -1074,6 +1074,18 @@ header .logo img {
         color: #111111 !important;
         font-weight: 600 !important;
     }
+    /* ── Evitar que el mapa superponga el texto de Ubicación en móvil ── */
+    .cz_middle_footer .col {
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+        display: block !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .sidebar_footer-3 {
+        margin-top: 40px !important;
+    }
 }
 
 /* ── Animaciones: estado inicial oculto antes de animar ── */
