@@ -1,0 +1,139 @@
+<style>
+    /* Estilos base del Header extraídos de index.html */
+    #site_header {
+        position: relative;
+        z-index: 999;
+        width: 100%;
+    }
+    .page_header {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-color: #5c0abe;
+    }
+    .header_2 {
+        background-color: transparent;
+    }
+    .header_4 {
+        background-color: #ffffff;
+        border-style: none;
+        border-width: 0 0 0px;
+        border-color: #f4f4f4;
+        box-shadow: 0px 10px 20px 0px rgba(92, 10, 190, 0.05);
+    }
+    .onSticky {
+        background-color: #ffffff !important;
+        box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.08) !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Estilos del Menú */
+    #menu_header_2 > .cz > a {
+        font-size: 17px;
+        color: #999999;
+        font-weight: 500;
+        padding: 6px 0px;
+        margin-right: 15px;
+        margin-left: 15px;
+        text-decoration: none;
+    }
+    #menu_header_2 > .cz > a:hover,
+    #menu_header_2 > .cz:hover > a,
+    #menu_header_2 > .cz.current_menu > a {
+        color: #5c0abe;
+    }
+    .sf-menu, .sf-menu * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .sf-menu li {
+        position: relative;
+        display: inline-block;
+    }
+    .sf-menu ul {
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 0;
+        z-index: 99;
+    }
+    .sf-menu li:hover > ul {
+        display: block;
+    }
+
+    /* Botón */
+    .cz_header_button {
+        display: inline-block;
+        font-size: 16px;
+        color: rgba(17, 17, 17, 0.8);
+        font-weight: 500;
+        background-color: #00ffcc;
+        padding: 10px 30px;
+        border-radius: 0px;
+        text-decoration: none;
+        box-shadow: 0px 16px 0px -10px #00ddb1;
+        transition: all 0.3s ease;
+    }
+    .cz_header_button:hover {
+        color: #ffffff;
+        background-color: #5c0abe;
+    }
+
+    /* Logo */
+    .logo img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Layout */
+    .elms_row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    .clr::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+<header id="site_header" class="page_header clr cz_sticky_h2">
+    <!-- Header Normal (Desktop) -->
+    <div class="header_2 have_center header_is_sticky smart_sticky cz_menu_fx_fade_in cz_submenu_fx_moveup">
+        <div class="row elms_row">
+            <div class="elms_left header_2_left">
+                <div class="cz_elm logo_header_2_left_0" style="margin-top:35px;margin-bottom:30px;">
+                    <a class="logo" href="#">
+                        <img src="https://xtratheme.com/elementor/event/wp-content/uploads/sites/105/2022/06/logo2023.png" alt="Logo" width="170">
+                    </a>
+                </div>
+            </div>
+            <div class="elms_center header_2_center">
+                <ul id="menu_header_2" class="sf-menu">
+                    <li class="cz current_menu"><a href="#">Inicio</a></li>
+                    <li class="cz"><a href="#nosotros">Nosotros</a></li>
+                    <li class="cz"><a href="#servicios-pymes">Servicios para PYMES</a></li>
+                    <li class="cz"><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="elms_right header_2_right">
+                <a class="cz_header_button" href="https://wa.me/50499574128">Empieza el cambio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Sticky / Mobile (Opcional, se puede ocultar con CSS si no se necesita) -->
+    <div class="header_4 smart_sticky header_is_sticky onSticky" style="display: none;">
+        <!-- ... Contenido del header sticky ... -->
+    </div>
+</header>

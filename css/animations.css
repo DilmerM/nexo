@@ -1,0 +1,1017 @@
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(to right, #ff006e, #3a86ff);
+    z-index: 9999999;
+    transition: width 0.1s ease-out;
+}
+
+/* Custom animations and overrides */
+
+[data-aos] {
+    transition-duration: 800ms !important;
+}
+
+/* Compact navbar */
+#site_header .header_2,
+#site_header .header_4 {
+    height: 68px !important;
+    min-height: 68px !important;
+}
+
+#site_header .header_2 .row,
+#site_header .header_4 .row {
+    height: 68px !important;
+    min-height: 68px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#site_header .header_2 .row > .clr,
+#site_header .header_4 .row > .clr {
+    width: 100% !important;
+    height: 68px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#site_header .Corpse_Sticky {
+    height: 68px !important;
+}
+
+#site_header .logo_header_2_left_0,
+#site_header .logo_header_4_left_3 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#site_header .inner_menu_header_2_center_0,
+#site_header .inner_button_header_2_right_0,
+#site_header .inner_menu_header_4_right_0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#site_header .logo_is_img img,
+#site_header .logo img {
+    width: 190px !important;
+    min-width: 190px !important;
+    max-height: 48px !important;
+}
+
+#site_header .cz_header_button {
+    min-height: 38px !important;
+    padding: 0 28px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #111111 !important;
+    background-color: #ffffff !important;
+    border-width: 1px !important;
+    box-shadow: none !important;
+}
+
+#site_header .elms_left,
+#site_header .elms_center,
+#site_header .elms_right,
+#site_header .elms_left > .cz_elm,
+#site_header .elms_center > div,
+#site_header .elms_right > .cz_elm,
+#menu_header_2 {
+    display: flex !important;
+    align-items: center !important;
+}
+
+#menu_header_2 > .cz > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 38px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Hero buttons above the info banner */
+.elementor-element-765312f {
+    position: relative !important;
+    z-index: 20 !important;
+    margin-top: 10px !important;
+    margin-bottom: 28px !important;
+}
+
+.elementor-element-2c99500,
+.elementor-element-f786310,
+.elementor-element-2c99500 .cz_btn,
+.elementor-element-f786310 .cz_btn {
+    position: relative !important;
+    z-index: 21 !important;
+}
+
+@media (max-width: 768px) {
+    #site_header .header_2 {
+        display: none !important;
+    }
+
+    #site_header .header_4 {
+        display: block !important;
+        height: 64px !important;
+        min-height: 64px !important;
+        overflow: visible !important;
+        background: rgba(255, 255, 255, 0.94) !important;
+        box-shadow: 0 8px 26px rgba(17, 17, 17, 0.12) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    #site_header .header_4 .row,
+    #site_header .header_4 .row > .clr {
+        height: 64px !important;
+        min-height: 64px !important;
+    }
+
+    #site_header .header_4 .row {
+        width: 100% !important;
+        padding: 0 14px !important;
+    }
+
+    #site_header .header_4 .row > .clr {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 12px !important;
+    }
+
+    #site_header .header_4_left,
+    #site_header .header_4_right {
+        width: auto !important;
+        float: none !important;
+        position: static !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 64px !important;
+        min-height: 64px !important;
+        flex: 0 0 auto !important;
+    }
+
+    #site_header .logo_header_4_left_3,
+    #site_header .inner_menu_header_4_right_0 {
+        margin: 0 !important;
+        position: static !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 64px !important;
+    }
+
+    #site_header .header_4 .logo_is_img,
+    #site_header .header_4 .logo {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 64px !important;
+        line-height: 1 !important;
+    }
+
+    #site_header .header_4 .logo img {
+        width: 142px !important;
+        min-width: 0 !important;
+        max-width: 52vw !important;
+        height: auto !important;
+        max-height: 38px !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    #site_header .header_4 .logo img,
+    #site_header .header_4 .logo img[data-aos],
+    #site_header .header_4 .logo img.animate-float,
+    #site_header .header_4 .logo img.animate-float-small {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    #site_header .cz_sticky_corpse_for_header_4 {
+        display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+    }
+
+    #site_header .cz_mi_88126 {
+        width: 42px !important;
+        height: 42px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        background: #5c0abe !important;
+        color: #ffffff !important;
+        font-size: 0 !important;
+        line-height: 1 !important;
+    }
+
+    #site_header .header_4 .icon_offcanvas_menu:not(.icon_mobile_offcanvas_menu) {
+        display: none !important;
+    }
+
+    #site_header .header_4 .icon_mobile_offcanvas_menu {
+        display: inline-flex !important;
+    }
+
+    #site_header .cz_mi_88126::before {
+        content: "\2630";
+        font-family: Arial, sans-serif !important;
+        font-size: 23px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+    }
+
+    #site_header .cz_close_popup,
+    #site_header .mobile-menu-close {
+        width: 42px !important;
+        height: 42px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        background: #00ffcc !important;
+        color: #27143d !important;
+        font-size: 0 !important;
+        position: relative !important;
+    }
+    
+    #site_header .cz_close_popup.hide,
+    #site_header .mobile-menu-close.hide {
+        display: none !important;
+    }
+
+    #site_header .mobile-menu-close::before,
+    #site_header .mobile-menu-close::after {
+        content: "";
+        width: 18px;
+        height: 2px;
+        position: absolute;
+        background: currentColor;
+        border-radius: 2px;
+    }
+
+    #site_header .mobile-menu-close::before {
+        transform: rotate(45deg);
+    }
+
+    #site_header .mobile-menu-close::after {
+        transform: rotate(-45deg);
+    }
+
+    #menu_header_4 {
+        width: min(320px, calc(100vw - 56px)) !important;
+        max-width: 320px !important;
+        min-height: 100dvh !important;
+        padding: 72px 22px 28px !important;
+        right: 0 !important;
+        left: auto !important;
+        background-size: cover !important;
+        background-position: center !important;
+        box-shadow: -18px 0 36px rgba(22, 8, 43, 0.28) !important;
+    }
+
+    #menu_header_4 > .cz > a {
+        min-height: 42px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        color: #ffffff !important;
+        font-size: 14px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0 !important;
+    }
+
+    #menu_header_4 > .cz > a:hover,
+    #menu_header_4 > .cz.current_menu > a {
+        color: #00ffcc !important;
+    }
+
+    .xtra-mobile-menu-additional {
+        padding: 24px 0 0 !important;
+    }
+
+    .xtra-mobile-menu-additional .cz_social {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        margin-bottom: 14px !important;
+    }
+
+    .xtra-mobile-menu-additional .cz_social a {
+        width: 34px !important;
+        height: 34px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        color: #27143d !important;
+        background: #00ffcc !important;
+        font: 800 12px/1 Arial, sans-serif !important;
+        text-decoration: none !important;
+    }
+
+    .xtra-mobile-menu-additional .cz_social a i,
+    .xtra-mobile-menu-additional .cz_social a span {
+        display: none !important;
+    }
+
+    .xtra-mobile-menu-additional .cz-facebook::before {
+        content: "F";
+    }
+
+    .xtra-mobile-menu-additional .cz-x-twitter::before {
+        content: "X";
+    }
+
+    .xtra-mobile-menu-additional .cz-linkedin-in::before {
+        content: "in";
+    }
+
+    .xtra-mobile-menu-additional .cz-instagram::before {
+        content: "IG";
+    }
+
+    .xtra-mobile-menu-text {
+        max-width: 260px !important;
+        margin: 0 auto !important;
+        color: #ffffff !important;
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+        text-align: center !important;
+    }
+}
+
+/* Preloader Styles */
+#nexo-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5c0abe; /* Theme color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.6s;
+}
+
+#nexo-preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-spinner {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: #00ffcc; /* Accent color */
+    animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Cool Hover Effects */
+.cz_btn, .cz_header_button {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.cz_btn:hover, .cz_header_button:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+}
+
+/* Floating animation for images */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(2deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Floating for small icons */
+@keyframes float-small {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(5px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+.animate-float-small {
+    animation: float-small 4s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse-soft {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(92, 10, 190, 0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(92, 10, 190, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(92, 10, 190, 0); }
+}
+
+.animate-pulse-soft {
+    animation: pulse-soft 2s infinite;
+}
+
+/* Text reveal mask effect */
+.reveal-text {
+    overflow: hidden;
+}
+.reveal-text span {
+    display: block;
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.reveal-text.aos-animate span {
+    transform: translateY(0);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #5c0abe;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999999;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: #00ffcc;
+    color: #5c0abe;
+}
+
+#back-to-top i {
+    font-size: 20px;
+}
+
+/* Gradient background shift */
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.bg-animate {
+    background-size: 200% 200% !important;
+    animation: gradient-shift 10s ease infinite !important;
+}
+
+/* Smooth Scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+#servicios-pymes {
+    scroll-margin-top: 86px;
+}
+
+
+
+
+/* 2. Asegurar que la etiqueta del enlace y la imagen no se achiquen a 0px ni se oculten */
+.logo_is_img,
+.logo_is_img img,
+header .logo img {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 250px !important; /* Evita que el JS lo colapse */
+    height: auto !important;
+    z-index: 999999 !important;
+}
+
+/* Centrar imágenes de las cartas PERSONAL, TEAM y ULTIMATE */
+.elementor-element-f617539 .cz_image,
+.elementor-element-9f360ef .cz_image,
+.elementor-element-af80ada .cz_image {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.elementor-element-f617539 .cz_main_image img,
+.elementor-element-9f360ef .cz_main_image img,
+.elementor-element-af80ada .cz_main_image img {
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Texto en cards de Servicios para PYMES - aparece al hover */
+.cz_grid_details > div {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cz_grid_link:hover .cz_grid_details > div,
+.cz_grid_link:hover .cz_grid_details > div {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ── Mejoras de Texto en Escritorio (Hover en Galería) ── */
+@media (min-width: 769px) {
+    .cz_grid_details h3,
+    .cz_grid_details h4 {
+        font-size: 22px !important;
+        color: #ffffff !important;
+        line-height: 1.3 !important;
+        margin-bottom: 12px !important;
+    }
+    .cz_grid_details p {
+        font-size: 16px !important;
+        color: #ffffff !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* ── Modal de Detalles para Móvil (Servicios PYMES) ── */
+.mobile-pymes-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Fondo transparente pedido por el usuario */
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+    pointer-events: none; /* Para que el fondo invisible no bloquee clics */
+}
+.mobile-pymes-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.mobile-pymes-modal-content {
+    background: rgba(92, 10, 190, 0.95);
+    color: #fff;
+    border-radius: 12px;
+    padding: 35px 20px 25px 20px;
+    width: 90%;
+    max-width: 350px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    text-align: center; /* Centrar el texto correctamente */
+    box-sizing: border-box;
+}
+.mobile-pymes-modal.active .mobile-pymes-modal-content {
+    transform: translateY(0) scale(1);
+}
+.mobile-pymes-modal-close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+}
+.mobile-pymes-modal-body h4 {
+    margin: 0 0 15px 0 !important;
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    color: #ffffff !important;
+}
+.mobile-pymes-modal-body p {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    color: #ffffff !important;
+}
+
+
+/* Contenedor Principal de la Sección - solo en servicios-pymes */
+#servicios-pymes .features-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Grid Inteligente: Se ajusta automáticamente al espacio disponible */
+#servicios-pymes .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    #servicios-pymes .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #servicios-pymes .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estructura Base de las Tarjetas */
+#servicios-pymes .feature-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 130px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+}
+
+/* Efecto Hover moderno y sutil */
+#servicios-pymes .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px -5px rgba(114, 18, 179, 0.1);
+}
+
+/* Estilos de los textos internos */
+#servicios-pymes .card-text {
+    color: #7212b3;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* --- Animación Pura en CSS (Réplica del fadeInUp de Elementor) --- */
+#servicios-pymes .animated-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Delays escalonados para mejorar la experiencia visual (Stagger effect) */
+#servicios-pymes .delay-1 { animation-delay: 0.15s; }
+#servicios-pymes .delay-2 { animation-delay: 0.3s; }
+#servicios-pymes .delay-3 { animation-delay: 0.45s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.codevz-widget-custom-menu-2 .cz4577 a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.codevz-widget-custom-menu-2 .cz4577 svg {
+    flex: 0 0 auto !important;
+    color: #5c0abe !important;
+}
+
+/* Cards de Servicios para PYMES: movimiento gradual ligado al scroll */
+#servicios-pymes .feature-card.pymes-scroll-card {
+    opacity: var(--pymes-card-opacity, 0);
+    transform:
+        translateY(var(--pymes-card-y, 34px))
+        scale(var(--pymes-card-scale, 0.96));
+    transition:
+        opacity 120ms linear,
+        transform 120ms linear,
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #servicios-pymes .feature-card.pymes-scroll-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Reemplazo visual de la antigua seccion de speakers */
+.elementor-element-89c0ec1 {
+    display: none !important;
+}
+
+.talento-emprendedor-section {
+    padding: 92px 20px 42px;
+    background: #ffffff;
+}
+
+.elementor-element-067b82e {
+    margin-top: 0 !important;
+    padding-top: 24px !important;
+}
+
+.elementor-element-ed9ccce {
+    margin-top: 0 !important;
+    padding-top: 24px !important;
+}
+
+.elementor-element-ed9ccce .elementor-column {
+    animation-delay: 0s !important;
+    opacity: 1;
+}
+
+.talento-emprendedor-wrap {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.talento-emprendedor-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 360px;
+}
+
+.talento-emprendedor-intro h4 {
+    margin: 0 0 12px;
+    color: #6f6f6f;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.talento-emprendedor-intro h2 {
+    margin: 0 0 54px;
+    color: #6512c8;
+    font-family: Oswald, Roboto, Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.18;
+    text-transform: uppercase;
+}
+
+.talento-emprendedor-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 64px;
+    padding: 0 34px;
+    background: #06e5c4;
+    color: #111111 !important;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.talento-emprendedor-btn:hover {
+    background: #14f2d0;
+    transform: translateY(-3px);
+}
+
+.talento-emprendedor-card {
+    min-height: 360px;
+    padding: 34px 30px;
+    border-bottom: 10px solid #6512c8;
+    background:
+        linear-gradient(180deg, rgba(12, 12, 16, 0.74), rgba(12, 12, 16, 0.92)),
+        linear-gradient(135deg, #24242b, #111116);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.talento-emprendedor-card h3 {
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-family: Oswald, Roboto, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.18;
+    text-transform: uppercase;
+}
+
+.talento-emprendedor-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 15px;
+    line-height: 1.62;
+}
+
+@media (max-width: 1100px) {
+    .talento-emprendedor-wrap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .talento-emprendedor-section {
+        padding: 64px 18px 34px;
+    }
+
+    .talento-emprendedor-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .talento-emprendedor-intro,
+    .talento-emprendedor-card {
+        min-height: auto;
+    }
+
+    .talento-emprendedor-intro h2 {
+        margin-bottom: 32px;
+        font-size: 34px;
+    }
+}
+
+/* ── Contador PYMES: fix responsive móvil ── */
+@media (max-width: 768px) {
+
+    /* Anular el width fijo inline que rompe el layout */
+    section.elementor-element-ea7f46a,
+    .elementor-element-ea7f46a[style],
+    div[data-id="ea7f46a"] {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        left: 0 !important;
+        padding: 40px 15px !important;
+        box-sizing: border-box !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* Forzar altura auto y overflow visible en TODOS los contenedores internos */
+    .elementor-element-ea7f46a *,
+    .elementor-element-ea7f46a .elementor-container,
+    .elementor-element-ea7f46a .elementor-widget-wrap,
+    .elementor-element-ea7f46a .elementor-widget-container {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    /* Forzar el contenedor a ser de tipo bloque para que apile sí o sí */
+    .elementor-element-ea7f46a > .elementor-container,
+    .elementor-element-ea7f46a .elementor-container {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Cada columna = 100% ancho y bloque (anula floats o flex) */
+    .elementor-element-ea7f46a .elementor-col-50,
+    .elementor-element-ea7f46a .elementor-column,
+    .elementor-element-ea7f46a .elementor-element-5de92b0,
+    .elementor-element-ea7f46a .elementor-element-02acc01 {
+        display: block !important;
+        width: 100% !important;
+        flex: none !important;
+        max-width: 100% !important;
+        float: none !important;
+        clear: both !important; /* CRÍTICO: Evita que el texto flote al lado de los contadores */
+        margin-bottom: 20px !important;
+    }
+
+    /* El título horizontal y centrado */
+    .elementor-element-ea7f46a .cz_title,
+    .elementor-element-ea7f46a .cz_wpe_content,
+    .elementor-element-ea7f46a .cz_title_content {
+        display: block !important;
+        width: 100% !important;
+        clear: both !important;
+    }
+
+    .elementor-element-ea7f46a h2,
+    .elementor-element-ea7f46a h4 {
+        writing-mode: horizontal-tb !important;
+        text-align: center !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+        width: 100% !important;
+        font-size: 22px !important;
+        clear: both !important;
+    }
+
+    .elementor-element-ea7f46a h4 {
+        font-size: 14px !important;
+    }
+
+    /* Contador: cuadrícula 2×2 estricta */
+    #dynamic_countdown_pymes {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 15px 0 0 !important;
+        box-sizing: border-box !important;
+        clear: both !important;
+    }
+
+    #dynamic_countdown_pymes li {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px 8px !important;
+        margin: 0 !important;
+        opacity: 1 !important; /* Prevenir bugs de AOS en móvil */
+        transform: none !important;
+        visibility: visible !important;
+    }
+
+    /* CRÍTICO: El ul tiene la clase .clr (clearfix) que crea pseudo-elementos ::before y ::after. 
+       En un display: grid, estos pseudo-elementos se convierten en celdas vacías de la cuadrícula,
+       empujando los contadores de lugar y creando una tercera fila que queda tapada. */
+    #dynamic_countdown_pymes::before,
+    #dynamic_countdown_pymes::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    #dynamic_countdown_pymes li span {
+        font-size: 28px !important;
+    }
+
+    #dynamic_countdown_pymes li p {
+        font-size: 12px !important;
+    }
+
+    /* La sección del contador necesita padding-bottom para que la cuadrícula 2x2 
+       tenga espacio, ya que Elementor calcula alturas antes de nuestro CSS grid */
+    .elementor-element-ea7f46a .elementor-element-02acc01 {
+        padding-bottom: 120px !important;
+    }
+
+    /* La sección morada de aliados: evitar que se monte sobre los contadores */
+    section.elementor-element-906da44,
+    .elementor-element-906da44 {
+        margin-top: 20px !important;
+        clear: both !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+}
