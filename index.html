@@ -6697,62 +6697,63 @@
             src="about:blank" frameborder="0" scrolling="no" height="30px"
             style="outline:none !important; visibility:visible !important; resize:none !important; box-shadow:none !important; overflow:visible !important; background:none !important; opacity:1 !important; filter:alpha(opacity=100) !important; -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important; -mz-opacity:1 !important; -khtml-opacity:1 !important; top:auto !important; right:auto !important; bottom:30px !important; left:20px !important; position:fixed !important; border:0 !important; min-height:45px !important; min-width:280px !important; max-height:45px !important; max-width:280px !important; padding:0 !important; margin:0 !important; -moz-transition-property:none !important; -webkit-transition-property:none !important; -o-transition-property:none !important; transition-property:none !important; transform:none !important; -webkit-transform:none !important; -ms-transform:none !important; width:280px !important; height:45px !important; display:none !important; z-index:1000002 !important; background-color:transparent !important; cursor:none !important; float:none !important; border-radius:unset !important; pointer-events:auto !important; clip:auto !important; color-scheme:light !important;"
             id="vd1sut2i4gbs1780375992303" class="" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div id="message-preview"></div>
         <div id="chat-bubble"></div>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="scripts/animations.js"></script>
     <script>
-    /* ── Script de Scroll para todos los anclajes (botones y menú) ── */
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var hash = this.getAttribute('href');
-                if (hash === '#' || hash === '') return; // Ignorar enlaces vacíos
+    /* ── Script de Scroll a prueba de fallos (Capture Phase) ── */
+    document.addEventListener('click', function(e) {
+        // Encontrar si el clic fue en un enlace con '#'
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
 
-                var target = document.querySelector(hash);
-                if (target) {
-                    e.preventDefault();
+        var hash = link.getAttribute('href');
+        if (hash === '#' || hash === '') {
+            e.preventDefault();
+            e.stopPropagation(); // Detener otros scripts del tema
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            
+            // Cerrar menú
+            var offcanvasMenu = document.querySelector('.offcanvas_menu');
+            if (offcanvasMenu) offcanvasMenu.classList.remove('inview');
+            var pageCover = document.querySelector('.page_cover');
+            if (pageCover) pageCover.click();
+            var closeBtn = document.querySelector('.mobile-menu-close');
+            if (closeBtn) closeBtn.click();
+            document.body.classList.remove('offcanvas-opened');
+            return;
+        }
 
-                    // Cerrar sidebar móvil si está abierto
-                    var offcanvasMenu = document.querySelector('.offcanvas_menu');
-                    if (offcanvasMenu && offcanvasMenu.classList.contains('inview')) {
-                        offcanvasMenu.classList.remove('inview');
-                        var pageCover = document.querySelector('.page_cover');
-                        if (pageCover) pageCover.click(); // Disparar cierre del tema
-                        var closeBtn = document.querySelector('.mobile-menu-close');
-                        if (closeBtn) closeBtn.click();
-                        document.body.classList.remove('offcanvas-opened');
-                    }
+        var target = document.querySelector(hash);
+        if (target) {
+            e.preventDefault();
+            e.stopPropagation(); // Detener scripts del tema que bloquean el clic
 
-                    // Forzar el scroll usando getBoundingClientRect para mayor precisión en móviles
-                    setTimeout(function() {
-                        var headerOffset = 70; // Altura del header fijo
-                        var elementPosition = target.getBoundingClientRect().top;
-                        var offsetPosition = elementPosition + window.scrollY - headerOffset;
+            // Cerrar menú móvil
+            var offcanvasMenu = document.querySelector('.offcanvas_menu');
+            if (offcanvasMenu) offcanvasMenu.classList.remove('inview');
+            var pageCover = document.querySelector('.page_cover');
+            if (pageCover) pageCover.click();
+            var closeBtn = document.querySelector('.mobile-menu-close');
+            if (closeBtn) closeBtn.click();
+            document.body.classList.remove('offcanvas-opened');
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
-                        
-                        // Actualizar la URL sin saltos bruscos
-                        history.pushState(null, null, hash);
-                    }, 100);
-                }
-            });
-        });
-        
-        // Link "Inicio" especial
-        document.querySelectorAll('a[href="#"]').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-                var pageCover = document.querySelector('.page_cover');
-                if (pageCover) pageCover.click();
-            });
-        });
-    });
+            // Scroll preciso
+            setTimeout(function() {
+                var headerOffset = window.innerWidth <= 768 ? 64 : 70;
+                var elementPosition = target.getBoundingClientRect().top;
+                var offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+                
+                history.pushState(null, null, hash);
+            }, 50);
+        }
+    }, true); // El 'true' hace que atrape el clic ANTES que cualquier otro script
     </script>
 </body>
 
