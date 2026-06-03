@@ -840,9 +840,9 @@
     <script type="application/ld+json">{
 					  "@context": "https://schema.org/",
 					  "@type": "Product",
-					  "name": "Event WordPress Theme",
-					  "image": "https://xtratheme.com/api/demos/event.jpg",
-					  "description": "Conference, Seminar &amp; Webinar WordPress Theme",
+					  "name": "NEXO CAPITAL & DESARROLLO S.A.",
+					  "image": "https://nexo-capital-desarrollo.vercel.app/images/brand-xtra-1.png",
+					  "description": "Impulsamos el crecimiento económico y la infraestructura de Honduras.",
 					  "brand": {
 					    "@type": "Brand",
 					    "name": "Codevz"
@@ -880,14 +880,14 @@
 					    }
 					  }
 					}</script>
-    <meta property="og:title" content="NEXO CAPITAL &amp; DESARROLLO S.A.">
+    <meta property="og:title" content="Nexo Capital &amp; Desarrollo S.A.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://xtratheme.com/elementor">
-    <meta property="og:image" content="https://xtratheme.com/wp-content/uploads/2024/08/brand-xtra-1.jpg">
-    <meta property="og:image:alt" content="XTRA WordPress Theme - Responsive, Multipurpose, WooCommerce">
-    <meta property="og:description" content="Conference, Seminar &amp; Webinar WordPress Theme">
-    <meta property="og:site_name" content="Event WordPress Theme">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://nexo-capital-desarrollo.vercel.app/">
+    <meta property="og:image" content="https://nexo-capital-desarrollo.vercel.app/images/brand-xtra-1.png">
+    <meta property="og:image:alt" content="Nexo Capital &amp; Desarrollo S.A.">
+    <meta property="og:description" content="Impulsamos el crecimiento económico y la infraestructura de Honduras a través del fortalecimiento empresarial MIPYME.">
+    <meta property="og:site_name" content="Nexo Capital &amp; Desarrollo S.A.">
+    <meta property="og:locale" content="es_HN">
     <noscript>
         <style>
             .woocommerce-product-gallery {
@@ -6703,45 +6703,56 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="scripts/animations.js"></script>
     <script>
-    /* ── Sidebar móvil: smooth scroll + cerrar menú ── */
-    (function(){
-        var sidebar = document.getElementById('menu_header_4');
-        if (!sidebar) return;
-
-        sidebar.querySelectorAll('a[href^="#"]').forEach(function(link){
-            link.addEventListener('click', function(e){
+    /* ── Script de Scroll para todos los anclajes (botones y menú) ── */
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
                 var hash = this.getAttribute('href');
+                if (hash === '#' || hash === '') return; // Ignorar enlaces vacíos
 
-                // Cerrar el sidebar (xtra theme usa la clase 'inview')
-                var offcanvasMenu = this.closest('.offcanvas_menu');
-                if (offcanvasMenu) {
-                    offcanvasMenu.classList.remove('inview');
-                }
-                // Cerrar el overlay/page_cover
-                var pageCover = document.querySelector('.page_cover');
-                if (pageCover) pageCover.click();
-                // Hacer clic en el botón de cerrar si existe
-                var closeBtn = document.querySelector('.mobile-menu-close');
-                if (closeBtn) closeBtn.click();
-                // Quitar clase del body
-                document.body.classList.remove('offcanvas-opened');
-
-                // Scroll suave
-                if (hash === '#' || hash === '') {
+                var target = document.querySelector(hash);
+                if (target) {
                     e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    var target = document.querySelector(hash);
-                    if (target) {
-                        e.preventDefault();
-                        setTimeout(function(){
-                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 300); // Esperar a que cierre el sidebar
+
+                    // Cerrar sidebar móvil si está abierto
+                    var offcanvasMenu = document.querySelector('.offcanvas_menu');
+                    if (offcanvasMenu && offcanvasMenu.classList.contains('inview')) {
+                        offcanvasMenu.classList.remove('inview');
+                        var pageCover = document.querySelector('.page_cover');
+                        if (pageCover) pageCover.click(); // Disparar cierre del tema
+                        var closeBtn = document.querySelector('.mobile-menu-close');
+                        if (closeBtn) closeBtn.click();
+                        document.body.classList.remove('offcanvas-opened');
                     }
+
+                    // Forzar el scroll usando getBoundingClientRect para mayor precisión en móviles
+                    setTimeout(function() {
+                        var headerOffset = 70; // Altura del header fijo
+                        var elementPosition = target.getBoundingClientRect().top;
+                        var offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                        
+                        // Actualizar la URL sin saltos bruscos
+                        history.pushState(null, null, hash);
+                    }, 100);
                 }
             });
         });
-    })();
+        
+        // Link "Inicio" especial
+        document.querySelectorAll('a[href="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                var pageCover = document.querySelector('.page_cover');
+                if (pageCover) pageCover.click();
+            });
+        });
+    });
     </script>
 </body>
 
