@@ -1014,6 +1014,69 @@ header .logo img {
         position: relative !important;
         z-index: 1 !important;
     }
+
+    /* ── Ocultar imagen hero en móvil ── */
+    .elementor-element-4e64353 {
+        display: none !important;
+    }
+
+    /* ── Logos aliados: cuadrícula responsive en la card morada ── */
+    .elementor-element-c7bb162 .cz_grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 12px !important;
+        height: auto !important;
+        position: static !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item:first-child {
+        display: none !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item img {
+        max-width: 120px !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* ── Contadores: separación horizontal ── */
+    #dynamic_countdown_pymes {
+        gap: 10px !important;
+        padding: 0 6px !important;
+    }
+
+    #dynamic_countdown_pymes li {
+        padding: 14px 6px !important;
+    }
+
+    /* ── Scroll suave del header sticky en móvil ── */
+    #site_header .header_4 {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 99999 !important;
+        transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+    }
+
+    /* Espacio superior para compensar el header fijo */
+    .inner_layout {
+        padding-top: 64px !important;
+    }
 }
-. a n i m a t e d   {   a n i m a t i o n - f i l l - m o d e :   b o t h   ! i m p o r t a n t ;   }  
- 
+
+/* ── Animaciones: estado inicial oculto antes de animar ── */
+.animated {
+    animation-fill-mode: both !important;
+}
