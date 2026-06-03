@@ -6709,6 +6709,19 @@
         if (!link) return;
 
         var hash = link.getAttribute('href');
+        
+        // --- Manejo del resaltado visual (menú activo) ---
+        var parentLi = link.closest('li.menu-item');
+        if (parentLi) {
+            // Remover las clases de activo de todos los elementos del menú
+            var allMenuItems = document.querySelectorAll('.menu-item');
+            allMenuItems.forEach(function(item) {
+                item.classList.remove('current_menu', 'current-menu-item', 'current_page_item');
+            });
+            // Añadir las clases de activo al elemento clicado
+            parentLi.classList.add('current_menu', 'current-menu-item');
+        }
+
         if (hash === '#' || hash === '') {
             e.preventDefault();
             e.stopPropagation(); // Detener otros scripts del tema
