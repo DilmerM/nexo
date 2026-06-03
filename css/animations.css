@@ -1069,6 +1069,11 @@ header .logo img {
     .inner_layout {
         padding-top: 64px !important;
     }
+    /* ── Texto descriptivo hero más oscuro en móvil ── */
+    .elementor-element-7d9b47e p {
+        color: #111111 !important;
+        font-weight: 600 !important;
+    }
 }
 
 /* ── Animaciones: estado inicial oculto antes de animar ── */
