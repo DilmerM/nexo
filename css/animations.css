@@ -1092,3 +1092,17 @@ header .logo img {
 .animated {
     animation-fill-mode: both !important;
 }
+
+/* ── Solución Definitiva para el Gap a la izquierda en Secciones Full Width de Elementor ── */
+body, html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+section.elementor-section-stretched {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    position: relative !important;
+    left: calc(-50vw + 50%) !important;
+    right: auto !important;
+}
