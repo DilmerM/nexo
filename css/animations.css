@@ -1298,29 +1298,31 @@ header .logo img {
         width: 100%;
         margin: 16px 0 24px;
         border-radius: 16px;
-        overflow: hidden;
         background: #111;
         box-shadow: 0 8px 32px rgba(92, 10, 190, 0.25);
+        overflow: hidden; /* clip arrows que sobresalen */
     }
 
     .nexo-carousel-track-wrapper {
-        overflow: hidden;
         width: 100%;
+        overflow: hidden; /* ESTE es el que recorta las slides */
         border-radius: 16px;
+        position: relative;
     }
 
     .nexo-carousel-track {
         display: flex;
+        width: 100%; /* ocupa exactamente el wrapper */
         transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
         will-change: transform;
     }
 
     .nexo-carousel-slide {
         position: relative;
-        min-width: 100%;
+        width: 100%;       /* ancho fijo igual al wrapper */
+        min-width: 100%;   /* nunca se encoge */
         flex-shrink: 0;
         height: 260px;
-        overflow: hidden;
     }
 
     .nexo-carousel-slide img {
@@ -1330,6 +1332,7 @@ header .logo img {
         display: block;
         animation: none !important;
         float: none !important;
+        transform: none !important;
     }
 
     /* Sin overlay ni captions - solo imagenes */

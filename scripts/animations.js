@@ -318,7 +318,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function goTo(index) {
             current = (index + total) % total;
-            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            const slideWidth = carousel.querySelector('.nexo-carousel-track-wrapper').offsetWidth;
+            track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
             updateDots();
         }
 
