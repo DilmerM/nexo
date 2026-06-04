@@ -237,21 +237,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.classList.add('active');
             };
 
-            // Detectar doble tap en móvil
+            // Bloquear touchstart sin preventDefault para no romper la secuencia táctil
+            link.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+            }, { passive: true, capture: true });
+
+            // Detectar doble tap usando touchend
             link.addEventListener('touchend', function(e) {
+                e.stopPropagation();
                 const now = Date.now();
                 const timeSinceLast = now - lastTap;
+                lastTap = now;
                 if (timeSinceLast < 300 && timeSinceLast > 0) {
                     // Doble tap detectado
                     openModal.call(this, e);
+                } else {
+                    // Primer tap: solo cancelar el comportamiento por defecto
+                    e.preventDefault();
                 }
-                lastTap = now;
-            }, { passive: false, capture: true });
-
-            // Bloquear touchstart para que el theme no abra el lightbox
-            link.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
             }, { passive: false, capture: true });
         });
     }
