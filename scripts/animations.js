@@ -289,6 +289,32 @@ document.addEventListener('DOMContentLoaded', function() {
         duration: 800,
         easing: 'ease-out-quad',
         once: false, 
+    });
+
+    // 3. BACK TO TOP FUNCTIONALITY
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-quad',
+        once: false, 
         mirror: true,
         anchorPlacement: 'top-bottom',
         offset: 50, // Trigger animations 50px before they reach the viewport
@@ -296,3 +322,77 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Nexo Optimized Animations Initialized');
 });
+
+// ── CAROUSEL MÓVIL HERO ───────────────────────────────────────────────
+(function() {
+    function initHeroCarousel() {
+        const carousel = document.getElementById('nexo-hero-carousel');
+        if (!carousel) return;
+
+        // Solo activo en móvil
+        if (window.innerWidth > 768) return;
+
+        const track = carousel.querySelector('.nexo-carousel-track');
+        const slides = carousel.querySelectorAll('.nexo-carousel-slide');
+        const dotsContainer = carousel.querySelector('.nexo-carousel-dots');
+        const prevBtn = carousel.querySelector('.nexo-carousel-prev');
+        const nextBtn = carousel.querySelector('.nexo-carousel-next');
+        const total = slides.length;
+        let current = 0;
+        let autoPlayTimer = null;
+
+        // Crear dots
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'nexo-carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateDots() {
+            dotsContainer.querySelectorAll('.nexo-carousel-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === current);
+            });
+        }
+
+        function goTo(index) {
+            current = (index + total) % total;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            updateDots();
+        }
+
+        prevBtn.addEventListener('click', () => { goTo(current - 1); resetAutoPlay(); });
+        nextBtn.addEventListener('click', () => { goTo(current + 1); resetAutoPlay(); });
+
+        // Swipe support
+        let touchStartX = 0;
+        carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        carousel.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) {
+                diff > 0 ? goTo(current + 1) : goTo(current - 1);
+                resetAutoPlay();
+            }
+        }, { passive: true });
+
+        // Auto-play cada 4s
+        function startAutoPlay() {
+            autoPlayTimer = setInterval(() => goTo(current + 1), 4000);
+        }
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            startAutoPlay();
+        }
+
+        startAutoPlay();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHeroCarousel);
+    } else {
+        initHeroCarousel();
+    }
+})();
+// ── FIN CAROUSEL MÓVIL HERO ───────────────────────────────────────────
