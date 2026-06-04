@@ -220,27 +220,39 @@ document.addEventListener('DOMContentLoaded', function() {
         pymesGalleryLinks.forEach(link => {
             // Remover la función del lightbox original
             link.removeAttribute('data-xtra-lightbox');
-            link.classList.remove('cz_lightbox'); 
-            
+            link.classList.remove('cz_lightbox');
+
+            // Doble tap: registrar tiempo del último toque
+            let lastTap = 0;
+
             // Función para abrir el modal
             const openModal = function(e) {
                 e.preventDefault();
                 e.stopPropagation();
 
-                // Evitar múltiples aperturas si se dispara touch y click
                 if (modal.classList.contains('active')) return;
 
-                // Obtener el contenido del recuadro
                 const detailsHtml = this.querySelector('.cz_grid_details > div').innerHTML;
                 modalBody.innerHTML = detailsHtml;
-
-                // Mostrar el modal
                 modal.classList.add('active');
             };
 
-            // Interceptar todos los eventos posibles para que el theme no los capture
-            link.addEventListener('touchstart', openModal, { passive: false, capture: true });
-            link.addEventListener('click', openModal, { capture: true });
+            // Detectar doble tap en móvil
+            link.addEventListener('touchend', function(e) {
+                const now = Date.now();
+                const timeSinceLast = now - lastTap;
+                if (timeSinceLast < 300 && timeSinceLast > 0) {
+                    // Doble tap detectado
+                    openModal.call(this, e);
+                }
+                lastTap = now;
+            }, { passive: false, capture: true });
+
+            // Bloquear touchstart para que el theme no abra el lightbox
+            link.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }, { passive: false, capture: true });
         });
     }
 
