@@ -707,6 +707,57 @@ header .logo img {
 #servicios-pymes .delay-2 { animation-delay: 0.3s; }
 #servicios-pymes .delay-3 { animation-delay: 0.45s; }
 
+.elementor-element-671af53 {
+    padding: 0 clamp(24px, 5vw, 96px) !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+.elementor-element-671af53 > .elementor-container {
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.elementor-element-671af53 .cz_grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 48px 42px !important;
+    height: auto !important;
+    position: static !important;
+}
+
+.elementor-element-671af53 .cz_grid_item {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+}
+
+.elementor-element-671af53 .cz_grid_item:first-child {
+    display: none !important;
+}
+
+.elementor-element-671af53 .cz_grid_link,
+.elementor-element-671af53 .cz_grid_item img {
+    display: block !important;
+    width: 100% !important;
+}
+
+@media (max-width: 900px) {
+    .elementor-element-671af53 .cz_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .elementor-element-671af53 .cz_grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -756,8 +807,9 @@ header .logo img {
 }
 
 .talento-emprendedor-section {
-    padding: 92px 20px 42px;
+    padding: 92px clamp(24px, 5vw, 96px) 42px;
     background: #ffffff;
+    overflow: hidden;
 }
 
 .elementor-element-067b82e {
@@ -776,10 +828,11 @@ header .logo img {
 }
 
 .talento-emprendedor-wrap {
-    max-width: 1320px;
+    width: min(100%, 1720px);
+    max-width: none;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.05fr repeat(3, 1fr);
+    grid-template-columns: minmax(300px, 0.9fr) repeat(3, minmax(0, 1fr));
     gap: 28px;
     align-items: stretch;
 }
@@ -814,13 +867,16 @@ header .logo img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
+    width: 100%;
     min-height: 64px;
     padding: 0 34px;
     background: #06e5c4;
     color: #111111 !important;
-    font-size: 18px;
-    font-weight: 500;
+    font-family: Oswald, Roboto, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
     text-decoration: none !important;
     transition: transform 0.25s ease, background 0.25s ease;
 }
@@ -1023,10 +1079,12 @@ header .logo img {
     /* ── Logos aliados: cuadrícula responsive en la card morada ── */
     .elementor-element-c7bb162 .cz_grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px 12px !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px 20px !important;
         height: auto !important;
         position: static !important;
+        align-items: center !important;
+        justify-items: center !important;
     }
 
     .elementor-element-c7bb162 .cz_grid_item {
@@ -1044,10 +1102,42 @@ header .logo img {
         display: none !important;
     }
 
+    .elementor-element-c7bb162 .cz_grid_item:nth-child(4) {
+        grid-column: 1 / -1 !important;
+        order: 1 !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item:nth-child(2) {
+        order: 2 !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item:nth-child(3) {
+        order: 3 !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item:nth-child(5) {
+        order: 4 !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item:nth-child(6) {
+        order: 5 !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid_item .cz_grid_link {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 110px !important;
+        height: 110px !important;
+    }
+
     .elementor-element-c7bb162 .cz_grid_item img {
-        max-width: 120px !important;
-        height: auto !important;
+        width: 96px !important;
+        max-width: 96px !important;
+        height: 96px !important;
+        max-height: 96px !important;
         object-fit: contain !important;
+        margin: 0 auto !important;
     }
 
     /* ── Contadores: separación extra ── */
@@ -1091,4 +1181,107 @@ header .logo img {
 /* ── Animaciones: estado inicial oculto antes de animar ── */
 .animated {
     animation-fill-mode: both !important;
+}
+
+@media (max-width: 768px) {
+    .elementor-element-671af53 {
+        padding: 0 6px !important;
+        box-sizing: border-box !important;
+    }
+
+    .elementor-element-671af53 > .elementor-container,
+    .elementor-element-671af53 .elementor-widget-wrap,
+    .elementor-element-671af53 .elementor-widget-container,
+    .elementor-element-671af53 .cz_grid_p {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .elementor-element-671af53 .cz_grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        justify-items: center !important;
+        place-items: center !important;
+        gap: 34px !important;
+    }
+
+    .elementor-element-671af53 .cz_grid_item {
+        width: 100% !important;
+        max-width: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .elementor-element-671af53 .cz_grid_link {
+        display: block !important;
+        width: min(88vw, 520px) !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .elementor-element-671af53 .cz_grid_item img {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+    }
+
+    .mobile-pymes-modal {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        padding: 18px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+
+    .mobile-pymes-modal-content {
+        width: min(100%, 280px) !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+        padding: 34px 18px 24px !important;
+    }
+
+    .mobile-pymes-modal-body h4 {
+        font-size: 18px !important;
+    }
+
+    .mobile-pymes-modal-body p {
+        font-size: 12px !important;
+    }
+
+    .elementor-element-906da44,
+    .elementor-element-906da44 > .elementor-container,
+    .elementor-element-906da44 .elementor-widget-wrap,
+    .elementor-element-906da44 .elementor-widget-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .elementor-element-906da44 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .elementor-element-c7bb162 .cz_grid {
+        width: 100% !important;
+        max-width: 270px !important;
+        margin: 0 auto !important;
+        justify-items: center !important;
+    }
 }

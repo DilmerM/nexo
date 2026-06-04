@@ -119,12 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const rect = pymesSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
         const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
         pymesCards.forEach((card, index) => {
-            const enterStart = 0.12 + index * 0.11;
-            const enterEnd = enterStart + 0.18;
-            const exitStart = 0.72 + index * 0.045;
-            const exitEnd = exitStart + 0.16;
+            const enterStart = isMobile ? -0.18 + index * 0.045 : -0.14 + index * 0.055;
+            const enterEnd = enterStart + (isMobile ? 0.10 : 0.12);
+            const exitStart = 1.18;
+            const exitEnd = 1.32;
             const enterAmount = smoothStep(enterStart, enterEnd, progress);
             const exitAmount = smoothStep(exitStart, exitEnd, progress);
             const visibility = Math.max(0, Math.min(enterAmount, 1 - exitAmount));
