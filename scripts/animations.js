@@ -1,12 +1,4 @@
-window.addEventListener('load', function() {
-    const preloader = document.getElementById('nexo-preloader');
-    if (preloader) {
-        preloader.classList.add('hidden');
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 600);
-    }
-});
+
 
 // Scroll Progress Logic
 window.addEventListener('scroll', function() {
@@ -284,13 +276,11 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Nexo Optimized Animations Initialized');
 });
 
-// ── CAROUSEL MÓVIL HERO ───────────────────────────────────────────────
+// ── CAROUSEL HERO & GALLERY ───────────────────────────────────────────────
 (function() {
-    function initHeroCarousel() {
-        const carousel = document.getElementById('nexo-hero-carousel');
+    function initCarousel(carouselId) {
+        const carousel = document.getElementById(carouselId);
         if (!carousel) return;
-
-        if (window.innerWidth > 768) return;
 
         const track = carousel.querySelector('.nexo-carousel-track');
         const slides = carousel.querySelectorAll('.nexo-carousel-slide');
@@ -347,10 +337,15 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoPlay();
     }
 
+    function initAllCarousels() {
+        initCarousel('nexo-hero-carousel');
+        initCarousel('nexo-gallery-carousel');
+    }
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initHeroCarousel);
+        document.addEventListener('DOMContentLoaded', initAllCarousels);
     } else {
-        initHeroCarousel();
+        initAllCarousels();
     }
 })();
-// ── FIN CAROUSEL MÓVIL HERO ───────────────────────────────────────────
+// ── FIN CAROUSEL HERO & GALLERY ───────────────────────────────────────────

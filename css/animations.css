@@ -16,6 +16,20 @@
     transition-duration: 800ms !important;
 }
 
+/* Style for the purple section with bg2.png - blue shadow */
+.elementor-element-49d1376 .elementor-widget-wrap,
+.elementor-element-9f360ef .elementor-widget-wrap {
+    box-shadow: 0 0 30px rgba(27, 59, 106, 0.8) !important;
+    border: 2px solid #1B3B6A !important;
+}
+
+/* Cambiar color morado de hover en cartas de Servicios PYMES a #C89933 */
+.elementor-element-2621708 .cz_grid_link:before,
+.elementor-element-2621708 .cz_grid_link:hover:before,
+.elementor-element-2621708 .cz_grid_link:active:before {
+    background-color: rgba(200, 153, 51, 0.75) !important;
+}
+
 /* Compact navbar */
 #site_header .header_2,
 #site_header .header_4 {
@@ -305,7 +319,7 @@
 
     #menu_header_4 > .cz > a:hover,
     #menu_header_4 > .cz.current_menu > a {
-        color: #00ffcc !important;
+        color: #C89933 !important;
     }
 
     .xtra-mobile-menu-additional {
@@ -327,7 +341,7 @@
         justify-content: center !important;
         border-radius: 50% !important;
         color: #27143d !important;
-        background: #00ffcc !important;
+        background: #C89933 !important;
         font: 800 12px/1 Arial, sans-serif !important;
         text-decoration: none !important;
     }
@@ -363,38 +377,7 @@
     }
 }
 
-/* Preloader Styles */
-#nexo-preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1B3B6A; /* Theme color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.6s;
-}
 
-#nexo-preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader-spinner {
-    width: 60px;
-    height: 60px;
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    border-top-color: #00ffcc; /* Accent color */
-    animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
 
 /* Cool Hover Effects */
 .cz_btn, .cz_header_button {
@@ -478,12 +461,48 @@
 
 #back-to-top:hover {
     transform: translateY(-5px) scale(1.1);
-    background: #00ffcc;
+    background: #C89933;
     color: #1B3B6A;
 }
 
 #back-to-top i {
     font-size: 20px;
+}
+
+/* Íconos de redes sociales flotantes a dorado */
+.xtra-additional .cz_switcher a {
+    color: #C89933 !important;
+}
+.xtra-additional .cz_switcher a:hover {
+    color: #1B3B6A !important;
+}
+
+/* Íconos de redes sociales del footer a dorado y centrados */
+.cz_social,
+#cz3751,
+.cz_social_icons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+.cz_social a,
+#cz3751 a,
+.cz_social_icons a {
+    background-color: #C89933 !important;
+    color: #1B3B6A !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+}
+.cz_social a:hover,
+#cz3751 a:hover,
+.cz_social_icons a:hover {
+    background-color: #1B3B6A !important;
+    color: #C89933 !important;
 }
 
 /* Gradient background shift */
@@ -692,7 +711,7 @@ header .logo img {
 
 /* Estilos de los textos internos */
 #servicios-pymes .card-text {
-    color: #7212b3;
+    color: #C89933;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.4;
@@ -858,7 +877,7 @@ header .logo img {
 
 .talento-emprendedor-intro h2 {
     margin: 0 0 54px;
-    color: #6512c8;
+    color: #C89933;
     font-family: Oswald, Roboto, Arial, sans-serif;
     font-size: 44px;
     font-weight: 700;
@@ -873,8 +892,8 @@ header .logo img {
     width: 100%;
     min-height: 64px;
     padding: 0 34px;
-    background: #06e5c4;
-    color: #111111 !important;
+    background: #1B3B6A;
+    color: #fefefe !important;
     font-family: Oswald, Roboto, Arial, sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -885,17 +904,17 @@ header .logo img {
 }
 
 .talento-emprendedor-btn:hover {
-    background: #14f2d0;
+    background: #C89933;
     transform: translateY(-3px);
 }
 
 .talento-emprendedor-card {
     min-height: 360px;
     padding: 34px 30px;
-    border-bottom: 10px solid #6512c8;
+    border-bottom: 10px solid#C89933;
     background:
-        linear-gradient(180deg, rgba(12, 12, 16, 0.74), rgba(12, 12, 16, 0.92)),
-        linear-gradient(135deg, #24242b, #111116);
+        linear-gradient(180deg, rgba(12, 12, 16, 0.379), rgba(12, 12, 16, 0.308)),
+        linear-gradient(135deg, #1B3B6A, #1B3B6A);
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -1442,9 +1461,27 @@ header .logo img {
     }
 }
 
-/* ── CAROUSEL MÓVIL HERO ──────────────────────────────────────────── */
+/* ── SVGs SPONSORS ──────────────────────────────────────────── */
+.cz_grid .cz_grid_item img[src*="organizacion.svg"],
+.cz_grid .cz_grid_item img[src*="escritor.svg"],
+.cz_grid .cz_grid_item img[src*="maestro.svg"] {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+/* ── CAROUSEL HERO & GALLERY ──────────────────────────────────────────── */
 #nexo-hero-carousel {
     display: none; /* Oculto en desktop */
+}
+
+#nexo-gallery-carousel {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 16px 0 24px;
+    border-radius: 16px;
+    background: transparent;
+    box-shadow: 0 8px 32px rgba(27, 59, 106, 0.25);
 }
 
 @media (max-width: 768px) {
@@ -1458,102 +1495,138 @@ header .logo img {
         box-shadow: 0 8px 32px rgba(27, 59, 106, 0.25);
         overflow: hidden; /* clip arrows que sobresalen */
     }
-
-    .nexo-carousel-track-wrapper {
-        width: 100%;
-        overflow: hidden; /* ESTE es el que recorta las slides */
-        border-radius: 16px;
-        position: relative;
+    #nexo-hero-carousel .nexo-carousel-slide {
+        height: 260px !important;
     }
-
-    .nexo-carousel-track {
-        display: flex;
-        width: 100%; /* ocupa exactamente el wrapper */
-        transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: transform;
+    #nexo-hero-carousel .nexo-carousel-slide img {
+        height: 100% !important;
+        width: 100% !important;
     }
-
-    .nexo-carousel-slide {
-        position: relative;
-        width: 100%;       /* ancho fijo igual al wrapper */
-        min-width: 100%;   /* nunca se encoge */
-        flex-shrink: 0;
-        height: 260px;
-    }
-
-    .nexo-carousel-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        animation: none !important;
-        float: none !important;
-        transform: none !important;
-    }
-
-    /* Sin overlay ni captions - solo imagenes */
-    .nexo-carousel-slide::after {
-        display: none;
-    }
-
-    .nexo-carousel-caption {
-        display: none;
-    }
-
-    /* Prev / Next buttons */
-    .nexo-carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(27, 59, 106, 0.75);
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
-        line-height: 1;
-        cursor: pointer;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(4px);
-        transition: background 0.2s;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .nexo-carousel-btn:active {
-        background: rgba(27, 59, 106, 1);
-    }
-
-    .nexo-carousel-prev { left: 10px; }
-    .nexo-carousel-next { right: 10px; }
-
-    /* Dots */
-    .nexo-carousel-dots {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        padding: 10px 0 4px;
-        background: transparent;
-    }
-
-    .nexo-carousel-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(27, 59, 106, 0.3);
-        border: none;
-        cursor: pointer;
-        transition: background 0.25s, transform 0.25s;
-        padding: 0;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .nexo-carousel-dot.active {
-        background: #1B3B6A;
-        transform: scale(1.35);
+    .cz_grid .cz_grid_item img[src*="organizacion.svg"],
+    .cz_grid .cz_grid_item img[src*="escritor.svg"],
+    .cz_grid .cz_grid_item img[src*="maestro.svg"] {
+        width: 100px !important;
+        height: 100px !important;
     }
 }
+
+.nexo-carousel-track-wrapper {
+    width: 100%;
+    overflow: hidden; /* ESTE es el que recorta las slides */
+    border-radius: 16px;
+    position: relative;
+}
+
+.nexo-carousel-track {
+    display: flex;
+    width: 100%; /* ocupa exactamente el wrapper */
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.nexo-carousel-slide {
+    position: relative;
+    width: 100%;       /* ancho fijo igual al wrapper */
+    min-width: 100%;   /* nunca se encoge */
+    flex-shrink: 0;
+    height: auto;
+}
+
+.nexo-carousel-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    animation: none !important;
+    float: none !important;
+    transform: none !important;
+}
+
+/* Sin overlay ni captions - solo imagenes */
+.nexo-carousel-slide::after {
+    display: none;
+}
+
+.nexo-carousel-caption {
+    display: none;
+}
+
+/* Prev / Next buttons */
+.nexo-carousel-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(200, 153, 51, 0.85) !important;
+    color: #1B3B6A !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 24px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(4px) !important;
+    transition: all 0.3s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.nexo-carousel-btn:hover {
+    background: #C89933 !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+.nexo-carousel-btn:active {
+    background: #1B3B6A !important;
+    color: #C89933 !important;
+}
+
+.nexo-carousel-prev { left: 10px !important; }
+.nexo-carousel-next { right: 10px !important; }
+
+/* Dots */
+.nexo-carousel-dots {
+    position: absolute !important;
+    bottom: 12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    padding: 8px 16px !important;
+    background: transparent !important;
+    border-radius: 20px !important;
+}
+
+.nexo-carousel-dot {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: rgba(27, 59, 106, 0.3) !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    padding: 0 !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.nexo-carousel-dot.active {
+    background: #C89933 !important;
+    transform: scale(1.4) !important;
+}
+
+.nexo-carousel-dot:hover {
+    background: rgba(200, 153, 51, 0.6) !important;
+}
 /* ── FIN CAROUSEL MÓVIL HERO ──────────────────────────────────────── */
+
+/* Fondo del hero */
+.elementor-6 .elementor-element-0f2dbab {
+    background-image: url('images/FondoHero.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}

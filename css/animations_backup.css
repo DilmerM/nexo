@@ -697,7 +697,7 @@ header .logo img {
 
 .talento-emprendedor-intro h2 {
     margin: 0 0 54px;
-    color: #6512c8;
+    color: #C89933;
     font-family: Oswald, Roboto, Arial, sans-serif;
     font-size: 44px;
     font-weight: 700;
@@ -712,7 +712,7 @@ header .logo img {
     width: fit-content;
     min-height: 64px;
     padding: 0 34px;
-    background: #06e5c4;
+    background: #1B3B6A;
     color: #111111 !important;
     font-size: 18px;
     font-weight: 500;
@@ -728,7 +728,7 @@ header .logo img {
 .talento-emprendedor-card {
     min-height: 360px;
     padding: 34px 30px;
-    border-bottom: 10px solid #6512c8;
+    border-bottom: 10px solid #C89933;
     background:
         linear-gradient(180deg, rgba(12, 12, 16, 0.74), rgba(12, 12, 16, 0.92)),
         linear-gradient(135deg, #24242b, #111116);
