@@ -545,10 +545,13 @@ header .logo img {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.cz_grid_link:hover .cz_grid_details > div,
-.cz_grid_link:hover .cz_grid_details > div {
-    opacity: 1;
-    visibility: visible;
+/* Solo mostrar en escritorio, no en móvil al presionar */
+@media (min-width: 769px) {
+    .cz_grid_link:hover .cz_grid_details > div,
+    .cz_grid_link:hover .cz_grid_details > div {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 /* ── Mejoras de Texto en Escritorio (Hover en Galería) ── */
