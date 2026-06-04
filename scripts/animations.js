@@ -20,24 +20,23 @@ window.addEventListener('scroll', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     // 1. HERO SYNCHRONIZATION
-    // Assuming the first main section is the hero
     const heroSection = document.querySelector('section.elementor-section');
     if (heroSection) {
         heroSection.setAttribute('data-aos', 'fade-in');
         heroSection.setAttribute('data-aos-duration', '1500');
-        
+
         const heroElements = heroSection.querySelectorAll('.elementor-column, h1, h2, .cz_btn, img');
         heroElements.forEach((el, index) => {
             el.setAttribute('data-aos', 'fade-up');
-            el.setAttribute('data-aos-delay', (index * 100 + 300).toString()); // Start after 300ms, stagger by 100ms
+            el.setAttribute('data-aos-delay', (index * 100 + 300).toString());
             el.setAttribute('data-aos-duration', '1000');
         });
     }
 
     // 2. VARIETY IN ANIMATIONS
-    
+
     // Sections - alternate directions
     const sections = document.querySelectorAll('section.elementor-section:not(:first-child)');
     sections.forEach((sec, index) => {
@@ -56,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!col.hasAttribute('data-aos')) {
                 const effects = ['flip-left', 'flip-right', 'slide-up', 'zoom-in-up'];
                 col.setAttribute('data-aos', effects[(rowIndex + colIndex) % effects.length]);
-                col.setAttribute('data-aos-delay', (colIndex * 100).toString()); // Reduced delay
-                col.setAttribute('data-aos-offset', '0'); // Trigger exactly at bottom
+                col.setAttribute('data-aos-delay', (colIndex * 100).toString());
+                col.setAttribute('data-aos-offset', '0');
             }
         });
     });
@@ -85,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const imgAnims = ['zoom-in', 'fade-up-right', 'fade-up-left'];
             img.setAttribute('data-aos', imgAnims[index % imgAnims.length]);
             img.setAttribute('data-aos-offset', '0');
-            
-            // Randomly assign floating styles
+
             if (index % 3 === 0) {
                 img.classList.add('animate-float');
             } else if (index % 2 === 0) {
@@ -99,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const smallIcons = document.querySelectorAll('.cz_icon_box, .cz_counter, .cz_svg');
     smallIcons.forEach((icon, index) => {
         icon.setAttribute('data-aos', 'zoom-in');
-        icon.setAttribute('data-aos-delay', (index % 4 * 50).toString()); // Reduced delay
+        icon.setAttribute('data-aos-delay', (index % 4 * 50).toString());
         icon.setAttribute('data-aos-offset', '0');
     });
 
@@ -183,13 +181,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ── Galería PYMES: tap para mostrar texto en Modal Móvil ──────────────────────
+    // ── Galería PYMES: doble tap para mostrar modal en móvil ─────────────
     if (navigator.maxTouchPoints > 0) {
         const pymesGalleryLinks = document.querySelectorAll(
             '.elementor-element-2621708 .cz_grid_link'
         );
 
-        // Crear el modal una sola vez
         let modal = document.getElementById('mobile-pymes-modal');
         if (!modal) {
             modal = document.createElement('div');
@@ -203,7 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             document.body.appendChild(modal);
 
-            // Eventos para cerrar el modal
             const closeBtn = modal.querySelector('.mobile-pymes-modal-close');
             closeBtn.addEventListener('touchstart', (e) => { e.preventDefault(); modal.classList.remove('active'); });
             closeBtn.addEventListener('click', (e) => { e.preventDefault(); modal.classList.remove('active'); });
@@ -218,41 +214,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalBody = modal.querySelector('.mobile-pymes-modal-body');
 
         pymesGalleryLinks.forEach(link => {
-            // Remover la función del lightbox original
             link.removeAttribute('data-xtra-lightbox');
             link.classList.remove('cz_lightbox');
 
-            // Doble tap: registrar tiempo del último toque
             let lastTap = 0;
 
-            // Función para abrir el modal
             const openModal = function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-
                 if (modal.classList.contains('active')) return;
-
                 const detailsHtml = this.querySelector('.cz_grid_details > div').innerHTML;
                 modalBody.innerHTML = detailsHtml;
                 modal.classList.add('active');
             };
 
-            // Bloquear touchstart sin preventDefault para no romper la secuencia táctil
             link.addEventListener('touchstart', function(e) {
                 e.stopPropagation();
             }, { passive: true, capture: true });
 
-            // Detectar doble tap usando touchend
             link.addEventListener('touchend', function(e) {
                 e.stopPropagation();
                 const now = Date.now();
                 const timeSinceLast = now - lastTap;
                 lastTap = now;
                 if (timeSinceLast < 300 && timeSinceLast > 0) {
-                    // Doble tap detectado
                     openModal.call(this, e);
                 } else {
-                    // Primer tap: solo cancelar el comportamiento por defecto
                     e.preventDefault();
                 }
             }, { passive: false, capture: true });
@@ -288,36 +275,10 @@ document.addEventListener('DOMContentLoaded', function() {
     AOS.init({
         duration: 800,
         easing: 'ease-out-quad',
-        once: false, 
-    });
-
-    // 3. BACK TO TOP FUNCTIONALITY
-    const backToTop = document.getElementById('back-to-top');
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        easing: 'ease-out-quad',
-        once: false, 
+        once: false,
         mirror: true,
         anchorPlacement: 'top-bottom',
-        offset: 50, // Trigger animations 50px before they reach the viewport
+        offset: 50,
     });
 
     console.log('Nexo Optimized Animations Initialized');
@@ -329,7 +290,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const carousel = document.getElementById('nexo-hero-carousel');
         if (!carousel) return;
 
-        // Solo activo en móvil
         if (window.innerWidth > 768) return;
 
         const track = carousel.querySelector('.nexo-carousel-track');
@@ -341,7 +301,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let current = 0;
         let autoPlayTimer = null;
 
-        // Crear dots
         dotsContainer.innerHTML = '';
         slides.forEach((_, i) => {
             const dot = document.createElement('button');
@@ -366,7 +325,6 @@ document.addEventListener('DOMContentLoaded', function() {
         prevBtn.addEventListener('click', () => { goTo(current - 1); resetAutoPlay(); });
         nextBtn.addEventListener('click', () => { goTo(current + 1); resetAutoPlay(); });
 
-        // Swipe support
         let touchStartX = 0;
         carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
         carousel.addEventListener('touchend', e => {
@@ -377,7 +335,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, { passive: true });
 
-        // Auto-play cada 4s
         function startAutoPlay() {
             autoPlayTimer = setInterval(() => goTo(current + 1), 4000);
         }
