@@ -1525,18 +1525,18 @@ header .logo img {
 }
 
 .nexo-carousel-slide {
-    position: relative;
-    width: 100%;       /* ancho fijo igual al wrapper */
-    min-width: 100%;   /* nunca se encoge */
-    flex-shrink: 0;
-    height: 500px; /* Fixed height for all slides */
+    position: relative !important;
+    width: 100% !important;       /* ancho fijo igual al wrapper */
+    min-width: 100% !important;   /* nunca se encoge */
+    flex-shrink: 0 !important;
+    height: 500px !important; /* Fixed height for all slides */
 }
 
 .nexo-carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
     animation: none !important;
     float: none !important;
     transform: none !important;
