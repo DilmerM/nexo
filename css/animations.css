@@ -1529,12 +1529,12 @@ header .logo img {
     width: 100%;       /* ancho fijo igual al wrapper */
     min-width: 100%;   /* nunca se encoge */
     flex-shrink: 0;
-    height: auto;
+    height: 500px; /* Fixed height for all slides */
 }
 
 .nexo-carousel-slide img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
     animation: none !important;
