@@ -1630,3 +1630,127 @@ header .logo img {
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
+
+/* ==========================================================================
+   NEXO CAPITAL & DESARROLLO - Layout & Responsive Fixes
+   ========================================================================== */
+
+/* Fix Elementor stretched sections without JS dependency */
+.elementor-section.elementor-section-stretched {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    position: relative !important;
+}
+
+/* Ensure inner container is centered and responsive */
+.elementor-section.elementor-section-stretched > .elementor-container {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* Header desktop / mobile separation */
+@media (min-width: 993px) {
+    #site_header .header_4 {
+        display: none !important;
+    }
+    #site_header .header_2 {
+        display: block !important;
+    }
+}
+
+@media (max-width: 992px) {
+    #site_header .header_2 {
+        display: none !important;
+    }
+    #site_header .header_4 {
+        display: block !important;
+    }
+}
+
+/* Ensure social icon labels remain hidden so only icons appear */
+.cz_social span {
+    display: none !important;
+}
+
+/* Ensure animated buttons show single label properly */
+.cz_btn b.cz_btn_onhover {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    opacity: 0 !important;
+    transform: translate(-50%, 25%) !important;
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+}
+
+.cz_btn:hover b.cz_btn_onhover {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.cz_btn:hover > span {
+    opacity: 0 !important;
+}
+
+/* General layout cleanup */
+body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
+/* Botón Servicios Hero - Hover Azul #1B3B6A (en lugar de morado) */
+.elementor-6 .elementor-element.elementor-element-2c99500 .cz_btn:hover,
+.elementor-6 .elementor-element.elementor-element-2c99500 .cz_btn:after {
+    background-color: #1B3B6A !important;
+}
+
+.elementor-6 .elementor-element.elementor-element-2c99500 .cz_btn:hover b,
+.elementor-6 .elementor-element.elementor-element-2c99500 .cz_btn:hover span {
+    color: #ffffff !important;
+}
+
+/* Centrado perfecto de flechas en botones del carrusel */
+.nexo-carousel-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+}
+
+.nexo-carousel-btn svg {
+    display: block !important;
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0 auto !important;
+    stroke: #1B3B6A !important;
+    pointer-events: none !important;
+    transition: stroke 0.25s ease !important;
+}
+
+.nexo-carousel-btn:hover svg {
+    stroke: #1B3B6A !important;
+}
+
+.nexo-carousel-btn:active svg {
+    stroke: #C89933 !important;
+}
+
+.nexo-carousel-btn span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}

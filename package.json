@@ -1,0 +1,12 @@
+{
+  "name": "nexo-capital-desarrollo",
+  "version": "1.0.0",
+  "description": "Sitio web NEXO Capital & Desarrollo",
+  "scripts": {
+    "start": "live-server --port=3000 --no-browser",
+    "dev": "live-server --port=3000 --no-browser"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
